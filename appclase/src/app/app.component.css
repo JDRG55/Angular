@@ -1,0 +1,80 @@
+
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr  1fr;
+    grid-template-areas:
+    "header header  header  header  header"
+    "aside  section section section section"
+    "footer footer  footer  footer  footer";
+
+    grid-template-rows: 20% 70% 10%;
+    height: 98vh;
+}
+
+header{
+    grid-area: header;
+    border: 1px solid royalblue;
+}
+
+.box {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-flow: row wrap;
+    justify-content:space-between 
+}
+
+#logo{
+    width: 10%;
+}
+#logo_uni{
+    width: 100px;
+    height: 100px;
+}
+
+#titulo{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:center
+}
+
+#logo2{
+    border: 1px solid royalblue;
+}
+
+
+
+
+.box1 {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-flow: row wrap;
+    justify-content:space-between 
+}
+
+aside{
+    grid-area: aside;
+    border: 1px solid royalblue;
+}
+
+section{
+    grid-area: section;
+    border: 1px solid royalblue;
+}
+
+footer{
+  
+        grid-area: footer;
+        border: 1px solid royalblue;
+   
+    }
+
+    #pie_pagina{
+        border: 1px solid royalblue;
+    }
+    
+    #titulo{
+        border: 1px solid royalblue;
+    }
+    
+   
