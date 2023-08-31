@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {TableModule} from 'primeng/table'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -53,6 +54,7 @@ import { EliminarVentaComponent } from './components/venta/eliminar-venta/elimin
     EliminarVentaComponent
   ],
   imports: [
+    TableModule,
     BrowserModule,
     AppRoutingModule,
     PanelMenuModule,

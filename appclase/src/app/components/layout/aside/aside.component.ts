@@ -13,7 +13,7 @@ ngOnInit(): void {
     {
       label: 'Clientes',
       icon: 'pi pi-fw pi-users',
-      routerLink: '/clientes'
+      routerLink: '/clientes',
 
 
       // items: [

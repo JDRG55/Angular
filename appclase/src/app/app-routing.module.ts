@@ -6,6 +6,7 @@ import { UpdClienteComponent } from './components/cliente/upd-cliente/upd-client
 import { MostrarProductoComponent } from './components/producto/mostrar-producto/mostrar-producto.component';
 import { MostrarTipoProductoComponent } from './components/tipoProducto/mostrar-tipo-producto/mostrar-tipo-producto.component';
 import { MostrarVentaComponent } from './components/venta/mostrar-venta/mostrar-venta.component';
+import { AppClienteComponent } from './components/cliente/app-cliente/app-cliente.component';
 
 const routes: Routes = [
   { 
@@ -19,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: "addclientes",
-    component: DelClienteComponent
+    component: AppClienteComponent
   },
   {
     path: "clientes/edit/:id",
