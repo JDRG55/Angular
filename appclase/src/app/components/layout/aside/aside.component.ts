@@ -13,28 +13,33 @@ ngOnInit(): void {
     {
       label: 'Clientes',
       icon: 'pi pi-fw pi-users',
-      items: [
-        {
-           label: 'Crud Cliente'
-         },
-        {
-           label: 'HTML 2'
-      }
-      ]
+      routerLink: '/clientes'
+
+
+      // items: [
+      //   {
+      //     label: 'Crud Cliente'
+      //   },
+      //   {
+      //     label: 'HTML 2'
+      //   }
+      // ]
     },
     {
       label: 'Tipo Productos',
       icon: 'pi pi-fw pi-qrcode',
+      routerLink: '/tipoproductos'
     },
     {
       label: 'Productos',
       icon: 'pi pi-fw pi-shopping-bag',
+      routerLink: '/productos'
     },
     {
       label: 'Ventas',
       icon: 'pi pi-fw pi-shopping-cart',
+      routerLink: '/ventas'
     }
-
   ];
 
   
