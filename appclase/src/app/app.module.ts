@@ -1,9 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {TableModule} from 'primeng/table'
+import {TableModule} from 'primeng/table';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';  
+import { InputTextModule } from 'primeng/inputtext';
+import { ToastModule} from 'primeng/toast';
+import { MessageService} from 'primeng/api';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { ContentComponent } from './components/layout/content/content.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
@@ -54,13 +61,19 @@ import { EliminarVentaComponent } from './components/venta/eliminar-venta/elimin
     EliminarVentaComponent
   ],
   imports: [
+    ToastModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ButtonModule,
+    HttpClientModule,
     TableModule,
+    InputTextModule,
     BrowserModule,
     AppRoutingModule,
     PanelMenuModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
