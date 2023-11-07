@@ -1,1 +1,36 @@
-<p>mostrar-tipo-producto works!</p>
+<div class="flex align-items-center justify-content-end bg-cyan-100">
+    <a pButton pRipple label="Crear tipoProducto" icon="pi pi-user-plus" class="bg-cyan-600" [routerLink]="['/addtipoProducto']">
+    </a>
+  </div>
+  <div>
+    <p-toast></p-toast>
+  </div>
+<p-table [value]="tipoP">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>ID</th>
+            <th>nombre_Tipo_Producto</th>
+            <th>Fecha_crea</th>
+            <th>Fecha_Act</th>
+         
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-tipoP>
+        <tr>
+            <td>{{tipoP.id}}</td>
+            <td>{{tipoP.nombreTipoProducto}}</td>
+            <td>{{tipoP.createdAt}}</td>
+            <td>{{tipoP.updatedAt}}</td>
+             <!-- <td>
+                <a pButton pRipple icon="pi pi-sync" class="bg-cyan-600 mr-1" [routerLink]="['tipoproductos/edit/:id', tipoProducto.id]">
+                </a>
+                <p-button icon="pi pi-sync" styleClass="p-button-success"></p-button> 
+        
+                <button type="button" pButton pRipple icon="pi pi-times" class="bg-cyan-600 mr-1" (click)="eliminar(tipoProducto.id)">
+                </button>
+            </td> -->
+        </tr>
+    </ng-template>
+</p-table>
+
+

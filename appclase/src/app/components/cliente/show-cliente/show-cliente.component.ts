@@ -30,10 +30,10 @@ export class ShowClienteComponent implements OnInit {
           console.log(this.clientes)
         }
       })
-  }
+  } 
   eliminar(id: number): void{
-    this.router.navigateByUrl('/clientes');
-    this.clienteService.deleteCliente(id).subscribe(()=>{
+    this.router.navigateByUrl('/cliente');
+    this.clienteService.deleteCliente(id).subscribe( ()=>{
       this.mensaje.add({severity:'warn', summary: 'Notificación', detail: 'Cliente Eliminado', life:5000});
       this.mostrarClientes();
     },

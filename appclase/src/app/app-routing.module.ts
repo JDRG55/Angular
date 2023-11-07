@@ -7,6 +7,7 @@ import { MostrarProductoComponent } from './components/producto/mostrar-producto
 import { MostrarTipoProductoComponent } from './components/tipoProducto/mostrar-tipo-producto/mostrar-tipo-producto.component';
 import { MostrarVentaComponent } from './components/venta/mostrar-venta/mostrar-venta.component';
 import { AppClienteComponent } from './components/cliente/app-cliente/app-cliente.component';
+import { ActualizarTipoProductoComponent } from './components/tipoProducto/actualizar-tipo-producto/actualizar-tipo-producto.component';
 
 const routes: Routes = [
   { 
@@ -26,10 +27,17 @@ const routes: Routes = [
     path: "clientes/edit/:id",
     component: UpdClienteComponent
   },
+  
   {
     path: "tipoproductos",
     component: MostrarTipoProductoComponent
   },
+
+  {
+    path: "tipoproductos/edit/:id",
+    component: ActualizarTipoProductoComponent
+  },
+
 
   {
     path: "productos",

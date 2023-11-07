@@ -7,13 +7,15 @@ import { ClienteI } from '../models/clientes';
   providedIn: 'root'
 })
 export class ClienteService {
-  url = 'http://localhost:4000';
-  base_path = `${this.url}/clientes/`
-  base_path2 = `${this.url}/cliente/`
+  //url = 'http://localhost:4000';
+  url_postgres = 'http://localhost:5000';
+  base_path = `${this.url_postgres}/clientes/`
+  base_path2 = `${this.url_postgres}/cliente/`
 
   constructor(private http: HttpClient) { }
   getAllCliente(): Observable<{cliente:ClienteI[]}>{
     return this.http.get<{cliente:ClienteI[]}>(this.base_path)
+    
   }
   getOneCliente(id: number):Observable<{cliente:ClienteI[]}>{
     return this.http.get<{cliente:ClienteI[]}>(`${this.base_path2}${id}`)
