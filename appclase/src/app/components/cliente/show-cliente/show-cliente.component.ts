@@ -28,6 +28,7 @@ export class ShowClienteComponent implements OnInit {
         next: (data) => {
           this.clientes = data.cliente
           console.log(this.clientes)
+          
         }
       })
   } 
