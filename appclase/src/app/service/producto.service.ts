@@ -10,9 +10,8 @@ export class ProuctoService {
   url_postgres = 'http://localhost:5000';
   //url = 'http://localhost:4000';
   base_path = `${this.url_postgres}/productos`
-  base_path2 = `${this.url_postgres}/producto`
-  //base_path2 = `${this.url}/cliente/`
-
+  base_path2 = `${this.url_postgres}/producto/`
+  
   constructor(private http: HttpClient) { }
   getAllProucto(): Observable<{productos:ProuctoI[]}>{   
     return this.http.get<{productos:ProuctoI[]}>(this.base_path)
@@ -27,7 +26,7 @@ export class ProuctoService {
     return this.http.put<ProuctoI>(`${this.base_path2}${id}`, data);
   }
   deleteProucto(id: number): Observable<ProuctoI> {
-    return this.http.delete<ProuctoI>(`${this.base_path}${id}`);
+    return this.http.delete<ProuctoI>(`${this.base_path2}${id}`);
 
   }
 }

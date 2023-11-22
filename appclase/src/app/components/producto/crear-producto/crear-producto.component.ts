@@ -45,7 +45,7 @@ export class CrearProductoComponent {
   }
 
   cancel(){
-    this.router.navigateByUrl('/producto');
+    this.router.navigateByUrl('/productos');
   }
 
   get nombreProducto() { return this.form.get('nombreProducto'); }

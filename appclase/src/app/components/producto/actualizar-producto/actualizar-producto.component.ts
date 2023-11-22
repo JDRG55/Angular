@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { ProuctoI } from 'src/app/models/producto';
-import { ProuctoService } from 'src/app/service/producto.service';
+import { ProuctoService } from 'src/app/service/producto.service'; 
+
 @Component({
   selector: 'app-actualizar-producto',
   templateUrl: './actualizar-producto.component.html',
   styleUrls: ['./actualizar-producto.component.css']
 })
-export class ActualizarProductoComponent {
+export class ActualizarProductoComponent  {
+
   public id: number=0;
-  public form:FormGroup = this.formBuilder.group({
+  public form: FormGroup=this.formBuilder.group({
     id: [''],
     nombreProducto: ['', [Validators.required]],
     marcaProducto: ['', [Validators.required]],
@@ -19,14 +21,15 @@ export class ActualizarProductoComponent {
     stockProducto: ['', [Validators.required]],
     cantidadProducto: ['', [Validators.required]],
     TipoproductoId: ['', [Validators.required]],
-  });
+  })
 
   constructor(
-    private formBuilder: FormBuilder, 
-    private productoService: ProuctoService, 
-    private messageService: MessageService, 
-    private router:Router,
-    private route: ActivatedRoute,){}
+    private formBuilder: FormBuilder,
+    private productoService: ProuctoService,
+    private messageService: MessageService,
+    private router: Router,
+    private route: ActivatedRoute,
+  ) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
@@ -38,21 +41,19 @@ export class ActualizarProductoComponent {
       this.form.setValue(data.producto)
     }})
   }
-
-  onSubmit(): void{
+onSubmit(){
     const formValue: ProuctoI = this.form.value;
     const id: number = this.form.value.id;
-    this.productoService.updateProucto(id, formValue).subscribe(() =>{
+    this.productoService.updateProucto(id, formValue).subscribe(()=>{
       setTimeout(()=>{
-        this.messageService.add({severity:'succes', summary:'Notificacion',detail:'Actualizado', life: 5000});
+        this.messageService.add({severity: 'success', summary: 'Notificacion',detail: 'Actualizado', life:5000});
       }, 0);
-      this.router.navigateByUrl('producto');
-    } 
-    );
+      this.router.navigateByUrl('productos');
+    })
   }
 
-  cancel(){
-    this.router.navigateByUrl('/producto');
+  cancel() {
+    this.router.navigateByUrl('/productos');
   }
 
   get nombreProducto() { return this.form.get('nombreProducto'); }
@@ -61,6 +62,5 @@ export class ActualizarProductoComponent {
   get stockProducto() { return this.form.get('stockProducto'); }
   get cantidadProducto() { return this.form.get('cantidadProducto'); }
   get TipoproductoId() { return this.form.get('TipoproductoId'); }
-
 
 }

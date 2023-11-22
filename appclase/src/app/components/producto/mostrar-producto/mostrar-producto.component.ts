@@ -31,7 +31,20 @@ export class MostrarProductoComponent implements OnInit {
           
         }
       })
-  } 
+  }
+  
+  eliminar(id: number): void{
+    this.router.navigateByUrl('/producto');
+    this.productoService.deleteProucto(id).subscribe( ()=>{
+      this.mensaje.add({severity:'warn', summary: 'Notificación', detail: 'Eliminado', life:5000});
+      this.mostrarProductos();
+    },
+    err => {
+      console.log(err);
+      console.log('No se ha eliminado correctamente');
+    }
+    );
+}
 
 
 }

@@ -1,5 +1,5 @@
 <div class="flex align-items-center justify-content-end bg-cyan-100">
-    <a pButton pRipple label="Crear Cliente" icon="pi pi-user-plus" class="bg-cyan-600" [routerLink]="['/addclientes']">
+    <a pButton pRipple label="Crear venta" icon="pi pi-user-plus" class="bg-cyan-600" [routerLink]="['/addventas']">
     </a>
   </div>
   <div>
@@ -26,6 +26,17 @@
             <td>{{venta.descuentos}}</td>            
             <td>{{venta.total}}</td>
             <td>{{venta.clienteId}}</td>
+
+            <td>
+                <a pButton pRipple icon="pi pi-sync" class="bg-cyan-600 mr-1" [routerLink]="['/ventas/edit/', venta.id]">
+                </a>
+        
+                <!-- <button type="button" pButton pRipple icon="pi pi-times" class="bg-cyan-600 mr-1"   (click)="eliminar(producto.id)">
+                </button> -->
+
+                
+            </td>
+
         </tr>
     </ng-template>
 </p-table>

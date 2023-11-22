@@ -9,23 +9,23 @@ export class TipoProductoService {
   url_postgres = 'http://localhost:5000';
   //url = 'http://localhost:4000';
   base_path = `${this.url_postgres}/tipoproductos`
-  //base_path2 = `${this.url}/cliente/`
+  base_path2 = `${this.url_postgres}/tipoproducto/`
 
   constructor(private http: HttpClient) { }
   getAllTipoProducto(): Observable<{tipo_productos:tipoProductoI[]}>{   
     return this.http.get<{tipo_productos:tipoProductoI[]}>(this.base_path)
   }
-  // getOneCliente(id: number):Observable<{cliente:ClienteI[]}>{
-  //   return this.http.get<{cliente:ClienteI[]}>(`${this.base_path2}${id}`)
-  // }
-  // createCliente(data: any):Observable<ClienteI>{
-  //   return this.http.post<ClienteI>(this.base_path2, data)
-  // }
-  // updateCliente(id: number, data: ClienteI): Observable<ClienteI> {
-  //   return this.http.put<ClienteI>(`${this.base_path2}${id}`, data);
-  // }
-  // deleteCliente(id: number): Observable<ClienteI> {
-  //   return this.http.delete<ClienteI>(`${this.base_path2}${id}`);
+  getOneTipoProducto(id: number):Observable<{tipo_producto:tipoProductoI[]}>{
+    return this.http.get<{tipo_producto:tipoProductoI[]}>(`${this.base_path2}${id}`)
+  }
+  createTipoProducto(data: any):Observable<tipoProductoI>{
+    return this.http.post<tipoProductoI>(this.base_path2, data)
+  }
+  updateTipoProducto(id: number, data: tipoProductoI): Observable<tipoProductoI> {
+    return this.http.put<tipoProductoI>(`${this.base_path2}${id}`, data);
+  }
+  deleteTipoProducto(id: number): Observable<tipoProductoI> {
+    return this.http.delete<tipoProductoI>(`${this.base_path2}${id}`);
 
-  // }
+  }
 }

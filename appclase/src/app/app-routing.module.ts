@@ -10,6 +10,9 @@ import { AppClienteComponent } from './components/cliente/app-cliente/app-client
 import { ActualizarTipoProductoComponent } from './components/tipoProducto/actualizar-tipo-producto/actualizar-tipo-producto.component';
 import { CrearProductoComponent } from './components/producto/crear-producto/crear-producto.component';
 import { ActualizarProductoComponent } from './components/producto/actualizar-producto/actualizar-producto.component';
+import { CrearTipoProductoComponent } from './components/tipoProducto/crear-tipo-producto/crear-tipo-producto.component';
+import { CrearVentaComponent } from './components/venta/crear-venta/crear-venta.component';
+import { ActualizarVentaComponent } from './components/venta/actualizar-venta/actualizar-venta.component';
 
 const routes: Routes = [
   { 
@@ -40,6 +43,10 @@ const routes: Routes = [
     component: ActualizarTipoProductoComponent
   },
 
+  {
+    path: "addtipo",
+    component: CrearTipoProductoComponent
+  },
 
   {
     path: "productos",
@@ -60,6 +67,34 @@ const routes: Routes = [
     path: "ventas",
     component: MostrarVentaComponent
   },
+
+  {
+  path: "addventas",
+    component: CrearVentaComponent
+  },
+
+  {
+    path: "ventas/edit/:id",
+    component: ActualizarVentaComponent
+  },
+
+  {
+    path: "tipo",
+    component: MostrarTipoProductoComponent
+  },
+
+  {
+    path: "addtipo",
+      component: CrearTipoProductoComponent
+  },
+
+  {
+    path: "tipo/edit/:id",
+    component: ActualizarTipoProductoComponent
+  },
+
+
+
 ];
 
 @NgModule({
